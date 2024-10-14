@@ -234,24 +234,22 @@
                 pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
 
                 // Add clickable text links in the PDF
-                pdf.link(15, 50, 180
-                // Add clickable text links in the PDF
                 pdf.link(15, 50, 180, 10, { url: 'https://t.me/Eyouel_Mebratu_inbox' });
-                pdf.link(15, 60, 180, 10, { url: 'https://www.facebook.com/eyouelmebratuinbox' });
-                pdf.link(15, 70, 180, 10, { url: 'https://www.instagram.com/eyouelmebratu_inbox' });
+                                pdf.link(15, 60, 180, 10, { url: 'https://www.facebook.com/eyouelmebratuinbox' });
+                pdf.link(15, 70, 180, 10, { url: 'https://www.instagram.com/eyouelmebratu_inbox?igsh=b2g4MXJsZ3c5' });
                 pdf.link(15, 80, 180, 10, { url: 'https://wa.me/251963148584' });
-                pdf.link(15, 90, 180, 10, { url: 'https://www.snapchat.com/add/eyouelmebrau' });
-                pdf.link(15, 100, 180, 10, { url: 'https://x.com/EyouelMebratu' });
+                pdf.link(15, 90, 180, 10, { url: 'https://www.snapchat.com/add/eyouelmebrau?share_id=lF1RQN9M4UA&locale=en-GB' });
+                pdf.link(15, 100, 180, 10, { url: 'https://x.com/EyouelMebratu?t=aYLD5KWjGSb0QIzb9AACsA&s=09' });
                 pdf.link(15, 110, 180, 10, { url: 'https://www.youtube.com/@EyouelMebratuInbox' });
-                pdf.link(15, 120, 180, 10, { url: 'https://www.tiktok.com/@eyouel.mebratu.inbox' });
+                pdf.link(15, 120, 180, 10, { url: 'https://www.tiktok.com/@eyouel.mebratu.inbox?_t=8qErFXrH3P4&_r=1' });
 
-                // Add a clickable phone number
+                // Add clickable phone number in the PDF
                 pdf.textWithLink('Phone: +251963148584', 15, 130, { url: 'tel:+251963148584' });
 
-                // Add a clickable email address
+                // Add clickable email address in the PDF
                 pdf.textWithLink('Email: eyouelmebratuinbox@gmail.com', 15, 140, { url: 'mailto:eyouelmebratuinbox@gmail.com' });
 
-                // Save the PDF
+                // Save the generated PDF
                 pdf.save('MK_Digital_Business_Card.pdf');
             });
         }
@@ -259,3 +257,4 @@
 
 </body>
 </html>
+
