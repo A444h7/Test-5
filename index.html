@@ -149,21 +149,40 @@
     <script>
         function downloadPDF() {
             var content = document.getElementById('business-card-content');
-            html2canvas(content, { scale: 3, useCORS: true }).then(function (canvas) {
-                var pdf = new jsPDF('p', 'mm', 'a4');
-                var imgData = canvas.toDataURL('image/png');
-                var imgWidth = 210; 
-                var imgHeight = canvas.height * imgWidth / canvas.width;
-                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
 
+            // Set up HTML2Canvas with higher quality (scale 4)
+            html2canvas(content, {
+                scale: 4,
+                useCORS: true // Allow cross-origin images
+            }).then(function(canvas) {
+                var imgData = canvas.toDataURL('image/png');
+                
+                // Create PDF with jsPDF
+                var pdf = new jsPDF('p', 'mm', 'a4');
+                var imgWidth = 210; // Full A4 width
+                var imgHeight = canvas.height * imgWidth / canvas.width;
+                
+                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+                
                 // Add clickable links on the PDF
                 pdf.link(10, 50, 100, 10, { url: 'mailto:eyouelmebratuinbox@gmail.com' });
                 pdf.link(10, 70, 100, 10, { url: 'tel:+251963148584' });
+
+                // Add social media links to the PDF
+                pdf.link(10, 100, 100, 10, { url: 'https://t.me/Eyouel_Mebratu_inbox' });
+                pdf.link(10, 110, 100, 10, { url: 'https://www.facebook.com/eyouelmebratuinbox' });
+                pdf.link(10, 120, 100, 10, { url: 'https://www.instagram.com/eyouelmebratu_inbox' });
+                pdf.link(10, 130, 100, 10, { url: 'https://wa.me/251963148584' });
+                pdf.link(10, 140, 100, 10, { url: 'https://www.snapchat.com/add/eyouelmebrau' });
+                pdf.link(10, 150, 100, 10, { url: 'https://x.com/EyouelMebratu' });
+                pdf.link(10, 160, 100, 10, { url: 'https://www.youtube.com/@EyouelMebratuInbox' });
+                pdf.link(10, 170, 100, 10, { url: 'https://www.tiktok.com/@eyouel.mebratu.inbox' });
 
                 // Save the PDF
                 pdf.save('MK_Digital_Business_Card.pdf');
             });
         }
     </script>
+
 </body>
 </html>
